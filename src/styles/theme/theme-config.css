@@ -1,0 +1,323 @@
+/* ============================================================================
+   THEME CONFIGURATION
+   ============================================================================
+   This is the SINGLE SOURCE OF TRUTH for all brand colors and design tokens.
+   
+   To change the theme, modify the values in this file ONLY:
+   - Primary brand color: --theme-primary
+   - Secondary accent: --theme-secondary
+   - Semantic colors: success, info, warning, danger, help
+   - Border radius, shadows, transitions
+   
+   All other CSS files reference these tokens via CSS variables.
+   ============================================================================ */
+
+:root {
+  /* ==========================================================================
+     BRAND COLORS - Change these to update your entire app theme
+     ========================================================================== */
+
+  /* Primary Brand Color - Main accent color used for buttons, links, focus states */
+  --theme-primary: #0840b9;
+  --theme-primary-light: #3771c9;
+  --theme-primary-dark: #0d0666;
+  --theme-primary-text: #ffffff;
+
+  /* Secondary/Accent Color - Used for hover states, highlights */
+  --theme-secondary: #1ddafc;
+  --theme-secondary-light: #4dd5ff;
+  --theme-secondary-dark: #1598cc;
+  --theme-secondary-text: #ffffff;
+
+  /* Sidebar Colors */
+  --theme-sidebar: #0a449a;
+  --theme-sidebar-text: #ffffff;
+  --theme-sidebar-accent: #ffc82f;
+  --theme-sidebar-accent-text: #0a449a;
+  --theme-sidebar-hover: rgba(255, 255, 255, 0.12);
+  --theme-sidebar-active: rgba(255, 255, 255, 0.2);
+
+  /* ==========================================================================
+     SEMANTIC COLORS - Status and feedback colors
+     ========================================================================== */
+
+  /* Success */
+  --theme-success: #22c55e;
+  --theme-success-hover: #16a34a;
+  --theme-success-active: #15803d;
+  --theme-success-bg: rgba(34, 197, 94, 0.1);
+  --theme-success-border: rgba(34, 197, 94, 0.5);
+
+  /* Info */
+  --theme-info: #0ea5e9;
+  --theme-info-hover: #0284c7;
+  --theme-info-active: #0369a1;
+  --theme-info-bg: rgba(14, 165, 233, 0.1);
+  --theme-info-border: rgba(14, 165, 233, 0.5);
+
+  /* Warning */
+  --theme-warning: #f97316;
+  --theme-warning-hover: #ea580c;
+  --theme-warning-active: #c2410c;
+  --theme-warning-bg: rgba(249, 115, 22, 0.1);
+  --theme-warning-border: rgba(249, 115, 22, 0.5);
+
+  /* Danger/Error */
+  --theme-danger: #ef4444;
+  --theme-danger-hover: #dc2626;
+  --theme-danger-active: #b91c1c;
+  --theme-danger-bg: rgba(239, 68, 68, 0.1);
+  --theme-danger-border: rgba(239, 68, 68, 0.5);
+
+  /* Help/Purple */
+  --theme-help: #a855f7;
+  --theme-help-hover: #9333ea;
+  --theme-help-active: #7e22ce;
+  --theme-help-bg: rgba(168, 85, 247, 0.1);
+  --theme-help-border: rgba(168, 85, 247, 0.5);
+
+  /* ==========================================================================
+     NEUTRAL COLORS - Text, backgrounds, borders
+     ========================================================================== */
+
+  /* Text Colors */
+  --theme-text-primary: #1f2937;
+  --theme-text-secondary: #6b7280;
+  --theme-text-muted: #9ca3af;
+  --theme-text-disabled: #d1d5db;
+  --theme-text-inverse: #ffffff;
+  --theme-text-link: var(--theme-primary);
+  --theme-text-link-hover: var(--theme-primary-dark);
+
+  /* Background Colors */
+  --theme-bg-body: #f1f3f9;
+  --theme-bg-section: #eef2fb;
+  --theme-bg-card: #ffffff;
+  --theme-bg-input: #ffffff;
+  --theme-bg-overlay: rgba(16, 24, 40, 0.65);
+  --theme-bg-hover: #f3f4f6;
+  --theme-bg-active: #e5e7eb;
+  --theme-bg-highlight: color-mix(in srgb, var(--theme-primary) 8%, transparent);
+  --theme-bg-disabled: #f9fafb;
+
+  /* Surface Colors - For component backgrounds at different elevation levels */
+  --theme-surface-ground: var(--theme-bg-body);
+  --theme-surface-section: var(--theme-bg-section);
+  --theme-surface-card: var(--theme-bg-card);
+  --theme-surface-overlay: var(--theme-bg-card);
+  --theme-surface-hover: var(--theme-bg-hover);
+  --theme-surface-active: var(--theme-bg-active);
+  --theme-surface-0: #ffffff;
+  --theme-surface-50: #f8fafc;
+  --theme-surface-100: #f1f5f9;
+  --theme-surface-200: #e2e8f0;
+  --theme-surface-300: #cbd5e1;
+  --theme-surface-400: #94a3b8;
+  --theme-surface-500: #64748b;
+  --theme-surface-600: #475569;
+  --theme-surface-700: #334155;
+  --theme-surface-800: #1e293b;
+  --theme-surface-900: #0f172a;
+
+  /* Border Colors */
+  --theme-border: rgba(9, 30, 66, 0.14);
+  --theme-border-light: rgba(9, 30, 66, 0.08);
+  --theme-border-strong: rgba(9, 30, 66, 0.24);
+  --theme-border-hover: rgba(9, 30, 66, 0.32);
+  --theme-border-focus: var(--theme-primary);
+  --theme-border-disabled: rgba(9, 30, 66, 0.06);
+  --theme-divider: oklch(0.87 0.01 258.34 / 1);
+
+  /* Component Border Colors - Specific component states */
+  --theme-input-border: var(--theme-border);
+  --theme-input-border-hover: var(--theme-border-strong);
+  --theme-input-border-focus: var(--theme-primary);
+  --theme-input-border-error: var(--theme-danger);
+  --theme-input-border-disabled: var(--theme-border-disabled);
+
+  --theme-card-border: var(--theme-border-light);
+  --theme-card-border-hover: var(--theme-border);
+
+  --theme-table-border: var(--theme-border-light);
+  --theme-table-row-border: var(--theme-divider);
+
+  --theme-modal-border: var(--theme-border-light);
+  --theme-dropdown-border: var(--theme-border);
+  --theme-menu-border: var(--theme-border-light);
+  --theme-tooltip-border: transparent;
+
+  /* ==========================================================================
+     DESIGN TOKENS - Spacing, radius, shadows, transitions
+     ========================================================================== */
+
+  /* Border Radius */
+  --theme-radius-sm: 4px;
+  --theme-radius-md: 6px;
+  --theme-radius-lg: 8px;
+  --theme-radius-xl: 12px;
+  --theme-radius-full: 9999px;
+
+  /* Shadows */
+  --theme-shadow-soft: rgba(15, 23, 42, 0.08);
+  --theme-shadow-medium: rgba(15, 23, 42, 0.12);
+  --theme-shadow-strong: rgba(15, 23, 42, 0.16);
+
+  /* Focus Ring */
+  --theme-focus-ring-color: rgba(20, 10, 154, 0.35);
+  --theme-focus-ring-width: 3px;
+
+  /* Semantic Focus Rings - For severity button states */
+  --theme-warning-focus: color-mix(in srgb, var(--theme-warning) 50%, transparent);
+  --theme-danger-focus: color-mix(in srgb, var(--theme-danger) 50%, transparent);
+  --theme-info-focus: color-mix(in srgb, var(--theme-info) 50%, transparent);
+  --theme-success-focus: color-mix(in srgb, var(--theme-success) 50%, transparent);
+  --theme-help-focus: color-mix(in srgb, var(--theme-help) 50%, transparent);
+
+  /* Message Border Colors */
+  --theme-info-border-solid: color-mix(in srgb, var(--theme-info) 60%, #ffffff);
+  --theme-success-border-solid: color-mix(in srgb, var(--theme-success) 60%, #ffffff);
+  --theme-warning-border-solid: color-mix(in srgb, var(--theme-warning) 60%, #ffffff);
+  --theme-danger-border-solid: color-mix(in srgb, var(--theme-danger) 80%, #ffffff);
+
+  /* Transitions */
+  --theme-transition-fast: 0.15s;
+  --theme-transition-normal: 0.3s;
+  --theme-transition-slow: 0.5s;
+  --theme-transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ==========================================================================
+     LAYOUT DIMENSIONS
+     ========================================================================== */
+  --theme-topbar-height: 4.25rem;
+  --theme-sidebar-width: 17.5rem;
+  --theme-sidebar-width-collapsed: 5.75rem;
+
+  /* ==========================================================================
+     CHART COLORS - For data visualization
+     ========================================================================== */
+  --theme-chart-1: #3b82f6; /* blue */
+  --theme-chart-2: #10b981; /* green */
+  --theme-chart-3: #f59e0b; /* amber */
+  --theme-chart-4: #ef4444; /* red */
+  --theme-chart-5: #8b5cf6; /* purple */
+  --theme-chart-6: #ec4899; /* pink */
+  --theme-chart-7: #14b8a6; /* teal */
+  --theme-chart-8: #f97316; /* orange */
+  --theme-chart-9: #06b6d4; /* cyan */
+  --theme-chart-10: #84cc16; /* lime */
+
+  /* Tooltip colors */
+  --theme-tooltip-bg: rgba(0, 0, 0, 0.8);
+  --theme-tooltip-text: #ffffff;
+  --theme-tooltip-border: rgba(255, 255, 255, 0.1);
+
+  /* Avatar colors */
+  --theme-avatar-bg: #6073ff;
+  --theme-avatar-text: #ffffff;
+}
+
+/* ============================================================================
+   DARK THEME OVERRIDES
+   ============================================================================ */
+[data-theme='dark'] {
+  /* Text Colors */
+  --theme-text-primary: #f4f6fb;
+  --theme-text-secondary: rgba(244, 246, 251, 0.65);
+  --theme-text-muted: rgba(244, 246, 251, 0.45);
+  --theme-text-disabled: rgba(244, 246, 251, 0.25);
+  --theme-text-link: var(--theme-primary-light);
+  --theme-text-link-hover: var(--theme-secondary);
+
+  /* Background Colors */
+  --theme-bg-body: #0b1220;
+  --theme-bg-section: #111a2f;
+  --theme-bg-card: #131f36;
+  --theme-bg-input: #1a2744;
+  --theme-bg-overlay: rgba(7, 10, 20, 0.8);
+  --theme-bg-hover: rgba(255, 255, 255, 0.08);
+  --theme-bg-active: rgba(255, 255, 255, 0.12);
+  --theme-bg-highlight: color-mix(in srgb, var(--theme-primary) 15%, transparent);
+  --theme-bg-disabled: rgba(255, 255, 255, 0.04);
+
+  /* Surface Colors - Dark mode elevation */
+  --theme-surface-ground: var(--theme-bg-body);
+  --theme-surface-section: var(--theme-bg-section);
+  --theme-surface-card: var(--theme-bg-card);
+  --theme-surface-overlay: var(--theme-bg-card);
+  --theme-surface-hover: var(--theme-bg-hover);
+  --theme-surface-active: var(--theme-bg-active);
+  --theme-surface-0: #0b1220;
+  --theme-surface-50: #0f172a;
+  --theme-surface-100: #131f36;
+  --theme-surface-200: #1a2744;
+  --theme-surface-300: #243352;
+  --theme-surface-400: #334155;
+  --theme-surface-500: #475569;
+  --theme-surface-600: #64748b;
+  --theme-surface-700: #94a3b8;
+  --theme-surface-800: #cbd5e1;
+  --theme-surface-900: #f1f5f9;
+
+  /* Border Colors */
+  --theme-border: rgba(255, 255, 255, 0.12);
+  --theme-border-light: rgba(255, 255, 255, 0.06);
+  --theme-border-strong: rgba(255, 255, 255, 0.2);
+  --theme-border-hover: rgba(255, 255, 255, 0.28);
+  --theme-border-focus: var(--theme-primary-light);
+  --theme-border-disabled: rgba(255, 255, 255, 0.04);
+  --theme-divider: rgba(148, 163, 184, 0.18);
+
+  /* Component Border Colors - Dark mode */
+  --theme-input-border: var(--theme-border);
+  --theme-input-border-hover: var(--theme-border-strong);
+  --theme-input-border-focus: var(--theme-primary-light);
+  --theme-input-border-error: var(--theme-danger);
+  --theme-input-border-disabled: var(--theme-border-disabled);
+
+  --theme-card-border: var(--theme-border-light);
+  --theme-card-border-hover: var(--theme-border);
+
+  --theme-table-border: var(--theme-border-light);
+  --theme-table-row-border: var(--theme-divider);
+
+  --theme-modal-border: var(--theme-border);
+  --theme-dropdown-border: var(--theme-border);
+  --theme-menu-border: var(--theme-border-light);
+  --theme-tooltip-border: rgba(255, 255, 255, 0.1);
+
+  /* Shadows - darker for dark mode */
+  --theme-shadow-soft: rgba(8, 15, 28, 0.48);
+  --theme-shadow-medium: rgba(8, 15, 28, 0.6);
+  --theme-shadow-strong: rgba(8, 15, 28, 0.75);
+
+  /* Focus Ring - lighter for dark mode */
+  --theme-focus-ring-color: rgba(90, 77, 244, 0.4);
+
+  /* Sidebar Colors - Dark mode uses a darker, more muted palette */
+  --theme-sidebar: #0f172a;
+  --theme-sidebar-text: #e2e8f0;
+  --theme-sidebar-accent: #60a5fa;
+  --theme-sidebar-accent-text: #0f172a;
+  --theme-sidebar-hover: rgba(255, 255, 255, 0.08);
+  --theme-sidebar-active: rgba(255, 255, 255, 0.15);
+
+  /* Chart colors - slightly brighter for dark mode */
+  --theme-chart-1: #60a5fa; /* blue */
+  --theme-chart-2: #34d399; /* green */
+  --theme-chart-3: #fbbf24; /* amber */
+  --theme-chart-4: #f87171; /* red */
+  --theme-chart-5: #a78bfa; /* purple */
+  --theme-chart-6: #f472b6; /* pink */
+  --theme-chart-7: #2dd4bf; /* teal */
+  --theme-chart-8: #fb923c; /* orange */
+  --theme-chart-9: #22d3ee; /* cyan */
+  --theme-chart-10: #a3e635; /* lime */
+
+  /* Tooltip - inverted for dark mode */
+  --theme-tooltip-bg: rgba(255, 255, 255, 0.95);
+  --theme-tooltip-text: #1f2937;
+
+  /* Avatar colors */
+  --theme-avatar-bg: #818cf8;
+  --theme-avatar-text: #ffffff;
+}

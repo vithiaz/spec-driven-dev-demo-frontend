@@ -1,0 +1,635 @@
+/* PrimeReact layout + component tokens shared across light/dark themes.
+   These variables MAP the centralized theme-config.css tokens to PrimeReact's
+   expected variable names. DO NOT hardcode colors here - reference theme-config.css.
+   ============================================================================ */
+
+/* Import the centralized theme configuration */
+@import './theme-config.css';
+
+:root {
+  /* ==========================================================================
+     MAPPED VARIABLES - These map theme tokens to app-specific variable names
+     ========================================================================== */
+
+  /* Background/Foreground (for Tailwind/general use) */
+  --background: var(--theme-bg-body);
+  --foreground: var(--theme-text-primary);
+  --card: var(--theme-bg-card);
+  --card-foreground: var(--theme-text-primary);
+  --popover: var(--theme-bg-card);
+  --popover-foreground: var(--theme-text-primary);
+
+  /* Primary/Secondary */
+  --primary: var(--theme-primary);
+  --primary-foreground: var(--theme-primary-text);
+  --secondary: var(--theme-secondary);
+  --secondary-foreground: var(--theme-secondary-text);
+
+  /* Semantic Mapped */
+  --muted: var(--theme-bg-section);
+  --muted-foreground: var(--theme-text-secondary);
+  --accent: var(--theme-secondary);
+  --accent-foreground: var(--theme-secondary-text);
+  --destructive: var(--theme-danger);
+  --destructive-foreground: var(--theme-primary-text);
+
+  /* Input/Border - Use new specific tokens */
+  --border: var(--theme-border);
+  --border-light: var(--theme-border-light);
+  --border-strong: var(--theme-border-strong);
+  --input: transparent;
+  --input-background: var(--theme-bg-input);
+  --input-border: var(--theme-input-border);
+  --input-border-hover: var(--theme-input-border-hover);
+  --input-border-focus: var(--theme-input-border-focus);
+  --switch-background: #d1d5db;
+
+  /* Surface colors mapped */
+  --surface-ground: var(--theme-surface-ground);
+  --surface-section: var(--theme-surface-section);
+  --surface-card: var(--theme-surface-card);
+  --surface-overlay: var(--theme-surface-overlay);
+  --surface-hover: var(--theme-surface-hover);
+  --surface-active: var(--theme-surface-active);
+  --surface-0: var(--theme-surface-0);
+  --surface-50: var(--theme-surface-50);
+  --surface-100: var(--theme-surface-100);
+  --surface-200: var(--theme-surface-200);
+  --surface-300: var(--theme-surface-300);
+  --surface-400: var(--theme-surface-400);
+  --surface-500: var(--theme-surface-500);
+  --surface-600: var(--theme-surface-600);
+  --surface-700: var(--theme-surface-700);
+  --surface-800: var(--theme-surface-800);
+  --surface-900: var(--theme-surface-900);
+
+  /* Component borders mapped */
+  --card-border: var(--theme-card-border);
+  --card-border-hover: var(--theme-card-border-hover);
+  --table-border: var(--theme-table-border);
+  --table-row-border: var(--theme-table-row-border);
+  --modal-border: var(--theme-modal-border);
+  --dropdown-border: var(--theme-dropdown-border);
+  --menu-border: var(--theme-menu-border);
+  --tooltip-border: var(--theme-tooltip-border);
+
+  /* Font weights */
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  /* Focus ring */
+  --ring: var(--theme-primary);
+
+  /* Chart colors */
+  --chart-1: var(--theme-chart-1);
+  --chart-2: var(--theme-chart-2);
+  --chart-3: var(--theme-chart-3);
+  --chart-4: var(--theme-chart-4);
+  --chart-5: var(--theme-chart-5);
+
+  /* Border radius */
+  --radius: var(--theme-radius-md);
+
+  /* Sidebar - mapped from theme tokens */
+  --sidebar: var(--theme-sidebar);
+  --sidebar-foreground: var(--theme-sidebar-text);
+  --sidebar-primary: var(--theme-sidebar-text);
+  --sidebar-primary-foreground: var(--theme-sidebar);
+  --sidebar-accent: var(--theme-sidebar-accent);
+  --sidebar-accent-foreground: var(--theme-sidebar-accent-text);
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: var(--theme-sidebar-accent);
+
+  /* UI elements */
+  --icon-background: color-mix(in srgb, var(--theme-secondary) 15%, var(--theme-bg-card));
+  --section-background: var(--theme-bg-section);
+  --skeleton: #e5e7eb;
+
+  /* ==========================================================================
+     LAYOUT VARIABLES - Map to theme tokens
+     ========================================================================== */
+  --layout-topbar-height: var(--theme-topbar-height);
+  --layout-sidebar-width: var(--theme-sidebar-width);
+  --layout-sidebar-width-collapsed: var(--theme-sidebar-width-collapsed);
+  --layout-sidebar: var(--theme-sidebar);
+  --layout-sidebar-item-hover: var(--theme-sidebar-accent);
+  --layout-sidebar-item-active: var(--theme-sidebar-accent);
+  --layout-border-radius: var(--theme-radius-lg);
+  --layout-transition-curve: var(--theme-transition-curve);
+  --layout-transition-duration: var(--theme-transition-normal);
+
+  /* Primary color mapping */
+  --layout-primary-color: var(--theme-primary-light);
+  --layout-primary-color-dark: var(--theme-primary-dark);
+  --layout-primary-color-light: var(--theme-secondary);
+  --layout-primary-color-text: var(--theme-primary-text);
+  --layout-background-color: var(--theme-bg-body);
+
+  /* Semantic color mapping */
+  --layout-success-color: var(--theme-success);
+  --layout-info-color: var(--theme-info);
+  --layout-warning-color: var(--theme-warning);
+  --layout-danger-color: var(--theme-danger);
+  --layout-help-color: var(--theme-help);
+
+  /* Hover states */
+  --layout-success-color-hover: var(--theme-success-hover);
+  --layout-info-color-hover: var(--theme-info-hover);
+  --layout-warning-color-hover: var(--theme-warning-hover);
+  --layout-danger-color-hover: var(--theme-danger-hover);
+  --layout-help-color-hover: var(--theme-help-hover);
+
+  /* Active states */
+  --layout-success-color-actived: var(--theme-success-active);
+  --layout-info-color-actived: var(--theme-info-active);
+  --layout-warning-color-actived: var(--theme-warning-active);
+  --layout-danger-color-actived: var(--theme-danger-active);
+  --layout-help-color-actived: var(--theme-help-active);
+}
+
+/* ==========================================================================
+   BODY LAYOUT STYLES - Light Theme
+   ========================================================================== */
+body.layout-body {
+  --layout-text-color: var(--theme-text-primary);
+  --layout-text-secondary: var(--theme-text-secondary);
+  --layout-surface-ground: var(--theme-bg-body);
+  --layout-surface-section: var(--theme-bg-section);
+  --layout-surface-card: var(--theme-bg-card);
+  --layout-surface-overlay: var(--theme-bg-overlay);
+  --layout-menu-bg: linear-gradient(180deg, #1b2b5d 0%, #101935 100%);
+  --layout-menu-border: var(--theme-border-light);
+  --layout-menu-item-hover: var(--theme-sidebar-hover);
+  --layout-menu-item-active: var(--theme-sidebar-active);
+  --layout-menu-text: rgba(255, 255, 255, 0.82);
+  --layout-topbar-bg: linear-gradient(
+    135deg,
+    var(--theme-primary-light) 0%,
+    var(--theme-primary) 100%
+  );
+  --layout-topbar-text: var(--theme-primary-text);
+  --layout-divider: var(--theme-divider);
+  --layout-link-color: var(--theme-primary-light);
+  --layout-shadow-soft: var(--theme-shadow-soft);
+  --layout-shadow-medium: var(--theme-shadow-medium);
+  --layout-opacity-muted: 0.72;
+}
+
+/* ==========================================================================
+   BODY LAYOUT STYLES - Dark Theme
+   ========================================================================== */
+body.layout-body[data-theme='dark'] {
+  --layout-text-color: var(--theme-text-primary);
+  --layout-text-secondary: var(--theme-text-secondary);
+  --layout-surface-ground: var(--theme-bg-body);
+  --layout-surface-section: var(--theme-bg-section);
+  --layout-surface-card: var(--theme-bg-card);
+  --layout-surface-overlay: var(--theme-bg-overlay);
+  --layout-sidebar: var(--theme-sidebar);
+  --layout-menu-bg: linear-gradient(180deg, #112240 0%, #0b1023 100%);
+  --layout-menu-border: var(--theme-border-light);
+  --layout-menu-item-hover: var(--theme-sidebar-hover);
+  --layout-menu-item-active: var(--theme-sidebar-active);
+  --layout-menu-text: rgba(240, 244, 255, 0.87);
+  --layout-topbar-bg: linear-gradient(135deg, #273469 0%, #1a2342 100%);
+  --layout-topbar-text: #f8fafc;
+  --layout-divider: var(--theme-divider);
+  --layout-link-color: #8c9eff;
+  --layout-shadow-soft: var(--theme-shadow-soft);
+  --layout-shadow-medium: var(--theme-shadow-medium);
+}
+
+/* ==========================================================================
+   PRIMEREACT SURFACE VARIABLES
+   ========================================================================== */
+body.layout-body {
+  background: var(--layout-surface-ground);
+  color: var(--layout-text-color);
+  --background: var(--layout-surface-ground);
+  --foreground: var(--layout-text-color);
+  --surface-ground: var(--theme-surface-ground);
+  --surface-section: var(--theme-surface-section);
+  --surface-card: var(--theme-surface-card);
+  --surface-overlay: var(--theme-surface-overlay);
+  --surface-border: var(--theme-divider);
+  --surface-hover: var(--theme-surface-hover);
+  --surface-0: var(--theme-surface-0);
+  --surface-50: var(--theme-surface-50);
+  --surface-100: var(--theme-surface-100);
+  --surface-200: var(--theme-surface-200);
+  --surface-300: var(--theme-surface-300);
+  --surface-400: var(--theme-surface-400);
+  --surface-500: var(--theme-surface-500);
+  --surface-600: var(--theme-surface-600);
+  --surface-700: var(--theme-surface-700);
+  --surface-800: var(--theme-surface-800);
+  --surface-900: var(--theme-surface-900);
+  --primary-color: var(--layout-primary-color);
+  --primary-color-text: var(--layout-primary-color-text);
+  --primary-color-hover: var(--layout-primary-color-light);
+  --primary-color-active: var(--layout-primary-color-dark);
+  --text-color: var(--layout-text-color);
+  --text-color-secondary: var(--layout-text-secondary);
+  --p-focus-ring-color: var(--theme-focus-ring-color);
+  --focus-ring-color: var(--theme-focus-ring-color);
+  --focus-ring-width: var(--theme-focus-ring-width);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+body.layout-body {
+  font-family:
+    var(--font-Inter),
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  line-height: 1.6;
+}
+
+body.layout-body ::selection {
+  background: color-mix(in srgb, var(--theme-primary) 18%, transparent);
+  color: inherit;
+}
+
+body.layout-body[data-theme='dark'] {
+  --background: var(--layout-surface-ground);
+  --foreground: var(--layout-text-color);
+  --p-focus-ring-color: var(--theme-focus-ring-color);
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+a {
+  color: var(--layout-link-color);
+}
+
+a:hover {
+  color: var(--layout-primary-color-light);
+}
+
+.surface-card {
+  background: var(--surface-card);
+  color: var(--layout-text-color);
+}
+
+.surface-ground {
+  background: var(--layout-background-color);
+}
+
+.section-ground {
+  background: var(--section-background);
+}
+
+.shadow-soft {
+  box-shadow: 0 24px 40px -24px var(--layout-shadow-soft);
+}
+
+.shadow-medium {
+  box-shadow: 0 24px 50px -24px var(--layout-shadow-medium);
+}
+
+.border-system {
+  border: 1px solid var(--layout-divider);
+}
+
+.text-muted-foreground {
+  color: var(--muted-foreground);
+}
+
+.text-danger {
+  color: var(--layout-danger-color);
+}
+
+.primary-color {
+  color: var(--layout-primary-color);
+}
+
+.bg-sidebar {
+  background-color: var(--layout-sidebar);
+}
+
+/* ==========================================================================
+   DARK MODE OVERRIDES FOR TAILWIND CLASSES
+   Override common Tailwind background/text classes for dark mode
+   ========================================================================== */
+
+/* Background overrides */
+[data-theme='dark'] .bg-white {
+  background-color: var(--theme-bg-card);
+}
+
+[data-theme='dark'] .bg-gray-50 {
+  background-color: var(--theme-bg-section);
+}
+
+[data-theme='dark'] .bg-gray-100 {
+  background-color: var(--theme-bg-section);
+}
+
+[data-theme='dark'] .bg-gray-200 {
+  background-color: var(--theme-bg-input);
+}
+
+[data-theme='dark'] .bg-gray-300 {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Border overrides */
+[data-theme='dark'] .border-gray-100 {
+  border-color: var(--theme-border-light);
+}
+
+[data-theme='dark'] .border-gray-200 {
+  border-color: var(--theme-border);
+}
+
+[data-theme='dark'] .border-gray-300 {
+  border-color: var(--theme-border-strong);
+}
+
+[data-theme='dark'] .border-gray-400 {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme='dark'] .border-red-200 {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Text overrides */
+[data-theme='dark'] .text-gray-900 {
+  color: var(--theme-text-primary);
+}
+
+[data-theme='dark'] .text-gray-800 {
+  color: var(--theme-text-primary);
+}
+
+[data-theme='dark'] .text-gray-700 {
+  color: var(--theme-text-secondary);
+}
+
+[data-theme='dark'] .text-gray-600 {
+  color: var(--theme-text-secondary);
+}
+
+[data-theme='dark'] .text-gray-500 {
+  color: var(--theme-text-muted);
+}
+
+[data-theme='dark'] .text-gray-400 {
+  color: var(--theme-text-muted);
+}
+
+[data-theme='dark'] .text-gray-300 {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Hover state overrides */
+[data-theme='dark'] .hover\:bg-gray-100:hover {
+  background-color: var(--theme-bg-hover);
+}
+
+[data-theme='dark'] .hover\:bg-gray-50:hover {
+  background-color: var(--theme-bg-hover);
+}
+
+[data-theme='dark'] .hover\:text-gray-600:hover {
+  color: var(--theme-text-primary);
+}
+
+[data-theme='dark'] .hover\:text-gray-700:hover {
+  color: var(--theme-text-primary);
+}
+
+/* Focus state overrides */
+[data-theme='dark'] .focus\:border-gray-300:focus {
+  border-color: var(--theme-border-strong);
+}
+
+/* Ring overrides */
+[data-theme='dark'] .ring-gray-200 {
+  --tw-ring-color: var(--theme-border);
+}
+
+[data-theme='dark'] .ring-gray-300 {
+  --tw-ring-color: var(--theme-border-strong);
+}
+
+/* Divide overrides */
+[data-theme='dark'] .divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--theme-border-light);
+}
+
+[data-theme='dark'] .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--theme-border);
+}
+
+[data-theme='dark'] .divide-gray-300 > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--theme-border-strong);
+}
+
+/* Opacity backgrounds */
+[data-theme='dark'] .bg-white\/80 {
+  background-color: rgba(19, 31, 54, 0.8);
+}
+
+[data-theme='dark'] .bg-white\/50 {
+  background-color: rgba(19, 31, 54, 0.5);
+}
+
+/* Shadow overrides - darker shadows for dark mode */
+[data-theme='dark'] .shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --tw-shadow-colored:
+    0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow:
+    var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+[data-theme='dark'] .shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow:
+    var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* Placeholder text override */
+[data-theme='dark'] .placeholder-gray-400::placeholder {
+  color: var(--theme-text-muted);
+}
+
+[data-theme='dark'] .placeholder-gray-500::placeholder {
+  color: var(--theme-text-muted);
+}
+
+/* Animate pulse for skeleton loading */
+[data-theme='dark'] .animate-pulse {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   SEMANTIC COLOR BACKGROUNDS - Adjust opacity/brightness for dark mode
+   ========================================================================== */
+
+/* Blue backgrounds */
+[data-theme='dark'] .bg-blue-50 {
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+[data-theme='dark'] .bg-blue-100 {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Green backgrounds */
+[data-theme='dark'] .bg-green-50 {
+  background-color: rgba(34, 197, 94, 0.15);
+}
+
+[data-theme='dark'] .bg-green-100 {
+  background-color: rgba(34, 197, 94, 0.2);
+}
+
+/* Red backgrounds */
+[data-theme='dark'] .bg-red-50 {
+  background-color: rgba(239, 68, 68, 0.15);
+}
+
+[data-theme='dark'] .bg-red-100 {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+/* Orange backgrounds */
+[data-theme='dark'] .bg-orange-50 {
+  background-color: rgba(249, 115, 22, 0.15);
+}
+
+[data-theme='dark'] .bg-orange-100 {
+  background-color: rgba(249, 115, 22, 0.2);
+}
+
+/* Yellow backgrounds */
+[data-theme='dark'] .bg-yellow-50 {
+  background-color: rgba(234, 179, 8, 0.15);
+}
+
+[data-theme='dark'] .bg-yellow-100 {
+  background-color: rgba(234, 179, 8, 0.2);
+}
+
+/* Purple backgrounds */
+[data-theme='dark'] .bg-purple-50 {
+  background-color: rgba(168, 85, 247, 0.15);
+}
+
+[data-theme='dark'] .bg-purple-100 {
+  background-color: rgba(168, 85, 247, 0.2);
+}
+
+/* Primary backgrounds */
+[data-theme='dark'] .bg-primary-50 {
+  background-color: rgba(var(--theme-primary), 0.15);
+}
+
+/* ==========================================================================
+   SEMANTIC BORDER COLORS - Adjust for dark mode
+   ========================================================================== */
+
+[data-theme='dark'] .border-blue-200 {
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+[data-theme='dark'] .border-green-200 {
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+[data-theme='dark'] .border-green-500 {
+  border-color: rgba(34, 197, 94, 0.7);
+}
+
+[data-theme='dark'] .border-red-400 {
+  border-color: rgba(239, 68, 68, 0.6);
+}
+
+[data-theme='dark'] .border-red-500 {
+  border-color: rgba(239, 68, 68, 0.7);
+}
+
+/* ==========================================================================
+   DARK GRAY BACKGROUNDS - Invert for dark mode
+   ========================================================================== */
+
+[data-theme='dark'] .bg-gray-800 {
+  background-color: var(--theme-bg-section);
+}
+
+[data-theme='dark'] .bg-gray-900 {
+  background-color: var(--theme-bg-body);
+}
+
+/* ==========================================================================
+   LIGHT TEXT ON DARK BACKGROUNDS - Keep visible in dark mode
+   ========================================================================== */
+
+[data-theme='dark'] .text-gray-100 {
+  color: var(--theme-text-primary);
+}
+
+[data-theme='dark'] .text-gray-200 {
+  color: var(--theme-text-secondary);
+}
+
+/* ==========================================================================
+   SURFACE CLASSES - Custom palette (keep as-is or adjust)
+   These are likely already designed for both modes
+   ========================================================================== */
+
+/* Surface backgrounds - adjust for dark mode if needed */
+[data-theme='dark'] .bg-surface-50 {
+  background-color: var(--theme-bg-section);
+}
+
+[data-theme='dark'] .bg-surface-100 {
+  background-color: var(--theme-bg-section);
+}
+
+[data-theme='dark'] .bg-surface-200 {
+  background-color: var(--theme-bg-input);
+}
+
+/* Surface text */
+[data-theme='dark'] .text-surface-900 {
+  color: var(--theme-text-primary);
+}
+
+[data-theme='dark'] .text-surface-700 {
+  color: var(--theme-text-primary);
+}
+
+[data-theme='dark'] .text-surface-600 {
+  color: var(--theme-text-secondary);
+}
+
+[data-theme='dark'] .text-surface-500 {
+  color: var(--theme-text-secondary);
+}
+
+[data-theme='dark'] .text-surface-400 {
+  color: var(--theme-text-muted);
+}
+
+[data-theme='dark'] .text-surface-300 {
+  color: var(--theme-text-muted);
+}
+
+/* Surface borders */
+[data-theme='dark'] .border-surface-200 {
+  border-color: var(--theme-border);
+}
+
+[data-theme='dark'] .border-surface-700 {
+  border-color: var(--theme-border-strong);
+}
