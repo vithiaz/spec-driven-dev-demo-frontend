@@ -1,0 +1,73 @@
+apiVersion: backstage.io/v1alpha1
+kind: Story
+metadata:
+  name: user-login-story
+  title: User login to Application
+  description: |
+    Sebagai user saya dapat melakukan login ke dalam aplikasi menggunakan email yang terdaftar dan passord yang valid
+
+    Rincian Fitur:
+    1. Data utama:
+      - Email
+      - Password
+    2. Aksi utama Pengguna:
+      - Semua Pengguna masuk (login) ke aplikasi dengan mengisi email, password dan menekan tombol "Login"
+    3. Aturan dan validasi:
+      - Email yang diisi harus dalam format yang valid
+      - Akun Pengguna harus sudah berstatus aktif
+    4. Perilaku state khusus:
+      -
+spec:
+  actors:
+    - name: Pengguna
+      description: Semua Pengguna (User tipe student/learner) yang ingin masuk (login) ke aplikasi.
+  objective: |
+    1. Memungkinkan Semua Pengguna, dapat masuk (login) ke aplikasi dengan email dan password yang terdaftar dan berstatus aktif.
+  businessFlow: |
+    - User (student/lecturer) pertama kali membuka aplikasi
+    - Aplikasi menampilkan halaman "Login" dengan "Login Form" yang terdiri dari input "email", "password", dan tombol "login"
+    - User (student/lecturer) mengisi field "email" dengan email yang terdaftar, dan mengisi field  "password" dengan kata sandi yang valid
+    - User mengakses button "login"
+    - Aplikasi mengirimkan permintaan login ke sistem
+        - jika berhasil, maka, user akan dinavigasikan ke halaman "Dashboard"
+        - jika gagal, aplikasi akan menampilkan pesan gagal pada "Login Form"
+
+  acceptanceCriteria:
+
+    - scenario: Pengguna mengisi email dengan format salah
+      type: negative
+      actor:
+        - Pengguna
+      given: Pengguna berada di "Auth Login Page"
+      when: Pengguna mengisi email dengan format yang tidak valid
+      and_when: Aplikasi melakukan validasi format email
+      then: Aplikasi menampilkan pesan error "Email is not valid" di bawah field email
+      and_then: Aplikasi menampilkan tombol "Login" yang tidak aktif
+
+    - scenario: Login berhasil dengan kredensial benar dan akun berstatus aktif
+      type: positive
+      actor:
+        - Pengguna
+      given: Pengguna berada di "Auth Login Page"
+      when: Pengguna mengisi email dengan format yang valid dan password
+      and_when:
+        - Pengguna menekan tombol "Login"
+        - Aplikasi mengirimkan permintaan login ke Sistem
+      then: Sistem memverifikasi kredensial benar dan status akun aktif, 
+      and_then:
+        - Aplikasi menampilkan pesan toast sukses "Login successful."
+        - Aplikasi menavigasi Pengguna ke halaman "Home Page" dengan role default/role terakhir
+
+    - scenario: Login gagal dengan kredensial salah
+      type: negative
+      actor:
+        - Pengguna
+      given: Pengguna berada di "Auth Login Page"
+      when: Pengguna mengisi email dengan format yang valid dan password
+      and_when:
+        - Pengguna menekan tombol "Login"
+        - Aplikasi mengirimkan permintaan login ke Sistem
+      then: Sistem memverifikasi kredensial salah
+      and_then:
+        - Aplikasi menampilkan pesan toast error bahwa "Incorrect email and password combination."
+        - Pengguna tetap di halaman "Auth Login Page"
