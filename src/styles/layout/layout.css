@@ -31,7 +31,8 @@
   transition:
     background var(--layout-transition-duration) var(--layout-transition-curve),
     left var(--layout-transition-duration) var(--layout-transition-curve),
-    border-color var(--layout-transition-duration) var(--layout-transition-curve);
+    border-color var(--layout-transition-duration)
+      var(--layout-transition-curve);
 }
 
 /* Profile menu should be above topbar */
@@ -468,7 +469,11 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(90deg, rgba(96, 115, 255, 0.9) 0%, rgba(63, 55, 201, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(96, 115, 255, 0.9) 0%,
+    rgba(63, 55, 201, 1) 100%
+  );
 }
 
 .layout-sidebar-footer-tip {
@@ -600,7 +605,8 @@
   min-height: 100vh;
   margin-left: var(--layout-sidebar-width);
   padding-top: var(--layout-topbar-height);
-  transition: margin-left var(--layout-transition-duration) var(--layout-transition-curve);
+  transition: margin-left var(--layout-transition-duration)
+    var(--layout-transition-curve);
 }
 
 .layout-main {
@@ -619,7 +625,8 @@
   background: var(--layout-surface-card);
   border-bottom: 1px solid var(--layout-divider);
   z-index: 1001;
-  transition: left var(--layout-transition-duration) var(--layout-transition-curve);
+  transition: left var(--layout-transition-duration)
+    var(--layout-transition-curve);
 }
 
 .layout-page-header-content {

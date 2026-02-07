@@ -1,9 +1,3 @@
-/**
- * Menu components
- * Wrappers for PrimeReact menu components
- */
-
-// Export menu components when created
-// export { Menu, type MenuItem, type MenuRef } from './Menu';
-// export { Breadcrumbs } from './Breadcrumbs';
-// export { TabMenu } from './TabMenu';
+export { Breadcrumbs, type BreadcrumbsProps } from './Breadcrumbs';
+export { Menu, type MenuProps, type MenuItem, type MenuRef } from './Menu';
+export { TabMenu, type TabMenuProps } from './TabMenu';

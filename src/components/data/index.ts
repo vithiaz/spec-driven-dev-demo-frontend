@@ -1,8 +1,8 @@
-/**
- * Data display components
- * Wrappers for PrimeReact data display components
- */
+export { DataTable as default } from './datatable';
+export { Timeline } from './timeline';
+export { TreeTable } from './treetable';
 
-// Export data components when created
-// export { DataTable } from './datatable';
-// export { TreeTable } from './treetable';
+export * from './treetable';
+export * from './timeline';
+export * from './datatable';
+

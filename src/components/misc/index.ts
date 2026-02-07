@@ -1,8 +1,9 @@
-/**
- * Miscellaneous components
- * Wrappers for PrimeReact misc components
- */
-
-// Export misc components when created
-// export { Spinner } from './Spinner';
-// export { ProgressBar } from './ProgressBar';
+export * from './Avatar';
+export * from './Badge';
+export * from './Chip';
+export * from './ProgressBar';
+export * from './SecuredImage';
+export * from './Skeleton';
+export * from './Spinner';
+export * from './Tag';
+export * from './Tooltip';

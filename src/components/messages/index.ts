@@ -1,8 +1,4 @@
-/**
- * Message components
- * Wrappers for PrimeReact message components
- */
-
-// Export message components when created
-// export { Toast } from './Toast';
-// export { Message } from './Message';
+export { default as Toast } from './Toast';
+export { default as Message } from './Message';
+export type { ToastProps, ToastRef } from './Toast';
+export type { MessageProps } from './Message';
